@@ -42,6 +42,8 @@ func (User) Edges() []ent.Edge {
 	return []ent.Edge{
 		edge.From("owner", PasswordToken.Type).
 			Ref("user"),
+		edge.From("roles", Role.Type).
+			Ref("users"),
 	}
 }
 
